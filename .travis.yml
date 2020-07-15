@@ -4,7 +4,7 @@ node_js:
   - "12"
 
 script:
-  - npx semantic-release
+  - if [ "$TRAVIS_BRANCH" = "master" ]; then npm run release --minor --ci; fi
 
 notifications:
   email: false

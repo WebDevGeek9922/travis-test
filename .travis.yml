@@ -5,7 +5,7 @@ node_js:
 
 script:
   - git checkout "$TRAVIS_BRANCH"
-  - git config user.name WebDevGeek
+  - git config user.name WebDevGeek9922
   - if [ "$TRAVIS_BRANCH" = "master" ]; then yarn release --minor --ci; fi
   - if [ "$TRAVIS_BRANCH" = "stage" ]; then yarn release --patch --ci; fi
 

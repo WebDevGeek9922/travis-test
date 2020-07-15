@@ -1,19 +1,27 @@
 {
-  "name": "travis-test-semantic-release",
-  "version": "1.0.0",
+  "name": "travis-test",
+  "version": "0.0.0-development",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WebDevGeek9922/travis-test.git"
+    "url": "https://github.com/WebDevGeek9922/travis-test.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "UNLICENSED",
   "bugs": {
     "url": "https://github.com/WebDevGeek9922/travis-test/issues"
   },
-  "homepage": "https://github.com/WebDevGeek9922/travis-test#readme"
+  "homepage": "https://github.com/WebDevGeek9922/travis-test#readme",
+  "devDependencies": {
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "@semantic-release/github": "^7.0.7",
+    "@semantic-release/release-notes-generator": "^9.0.1",
+    "semantic-release": "^17.1.1"
+  }
 }

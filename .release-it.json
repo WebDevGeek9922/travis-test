@@ -6,7 +6,6 @@
     "release": false
   },
   "git": {
-    "requireCleanWorkingDir": false,
-    "requireUpstream": false
+    "requireCleanWorkingDir": false
   }
 }

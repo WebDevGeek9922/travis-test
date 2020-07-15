@@ -4,6 +4,7 @@ node_js:
   - "12"
 
 script:
+  - git checkout "$TRAVIS_BRANCH"
   - if [ "$TRAVIS_BRANCH" = "master" ]; then yarn release --minor --ci; fi
   - if [ "$TRAVIS_BRANCH" = "stage" ]; then yarn release --patch --ci; fi
 

@@ -4,8 +4,8 @@ node_js:
   - "12"
 
 script:
-  - if [ "$TRAVIS_BRANCH" = "master" ]; then npm run release --minor --ci; fi
-  - if [ "$TRAVIS_BRANCH" = "stage" ]; then npm run release --patch --ci; fi
+  - if [ "$TRAVIS_BRANCH" = "master" ]; then yarn release --minor --ci; fi
+  - if [ "$TRAVIS_BRANCH" = "stage" ]; then yarn release --patch --ci; fi
 
 notifications:
   email: false

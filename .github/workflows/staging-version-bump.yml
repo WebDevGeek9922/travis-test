@@ -25,6 +25,7 @@ jobs:
       run: |
         git config --global user.email "action@github.com"
         git config --global user.name "Staging Version Bump"
-        yarn version --patch --message "New patch version relesed [skip ci]",
-        git push origin staging
-        echo version bumped on staging.
+        yarn version --patch --message "New patch version released [skip ci]",
+        git push origin staging --follow-tags
+        git_tag=`git describe --tags`
+        echo version bumped on staging to $git_tag.

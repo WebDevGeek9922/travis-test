@@ -6,7 +6,7 @@ name: Bump Version on Staging
 # events but only for the staging branch
 on:
   push:
-    branches: [ staging ]
+    branches: [staging]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -17,15 +17,20 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
 
-    # Runs a set of commands using the runners shell
-    - name: Run a multi-line script
-      run: |
-        git config --global user.email "action@github.com"
-        git config --global user.name "Staging Version Bump"
-        yarn version --patch --message "New patch version released [skip ci]",
-        git push origin staging --follow-tags
-        git_tag=`git describe --tags`
-        echo version bumped on staging to $git_tag.
+      # Runs a set of commands using the runners shell
+      - name: bump version and tag
+        run: |
+          git config --global user.email "action@github.com"
+          git config --global user.name "Staging Version Bump"
+          yarn version --patch --message "New patch version released [skip ci]",
+          git push origin staging --follow-tags
+          git_tag=`git describe --tags`
+          echo version bumped on staging to $git_tag.
+      - name: Invoke deployment to AWS
+        uses: distributhor/workflow-webhook@v1
+        env:
+          webhook_url: ${{ secrets.AWS_URL }}
+          webhook_secret: ${{ secrets.AWS_SECRET }}

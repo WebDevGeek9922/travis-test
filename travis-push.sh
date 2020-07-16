@@ -8,4 +8,7 @@ git stash
 git checkout ${TRAVIS_BRANCH}
 git stash pop
 yarn version --patch
-git push https://${GITHUB_TOKEN}@github.com/WebDevGeek9922/travis-test.git
+git add package.json yarn.lock
+git add yarn.lock
+git commit -m "New version released [ci skip]"
+git push https://${GITHUB_TOKEN}@github.com/WebDevGeek9922/travis-test.git --follow-tags

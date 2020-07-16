@@ -16,8 +16,5 @@
   "bugs": {
     "url": "https://github.com/WebDevGeek9922/travis-test/issues"
   },
-  "homepage": "https://github.com/WebDevGeek9922/travis-test#readme",
-  "devDependencies": {
-    "release-it": "^13.6.5"
-  }
+  "homepage": "https://github.com/WebDevGeek9922/travis-test#readme"
 }

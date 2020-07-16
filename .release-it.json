@@ -3,7 +3,8 @@
     "publish": false
   },
   "github": {
-    "release": false
+    "release": false,
+    "skipChecks": true
   },
   "git": {
     "requireCleanWorkingDir": false

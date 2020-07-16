@@ -1,6 +1,6 @@
 {
   "name": "travis-test",
-  "version": "0.0.35",
+  "version": "0.0.36",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -16,8 +16,5 @@
   "bugs": {
     "url": "https://github.com/WebDevGeek9922/travis-test/issues"
   },
-  "homepage": "https://github.com/WebDevGeek9922/travis-test#readme",
-  "devDependencies": {
-    "release-it": "^13.6.5"
-  }
+  "homepage": "https://github.com/WebDevGeek9922/travis-test#readme"
 }

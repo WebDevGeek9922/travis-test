@@ -16,13 +16,8 @@
 # fi
 # git push https://${GITHUB_TOKEN}@github.com/WebDevGeek9922/travis-test.git --follow-tags
 
-PARAMS='{
-  "tag_name": "v0.5.1",
-  "target_commitish": "master",
-  "name": "v5.0.0",
-  "body": "Description of the release",
-  "draft": false,
-  "prerelease": false
-}'
+git_tag=`git describe --tags`
 
-curl -s -X POST -d $PARAMS https://api.github.com/repos/WebDevGeek9922/travis-test/releases
+echo $release_params
+
+curl -H "Authorization: token a092f79abf3203eb0ac2e926fd6b99b40495bd96" -s -X POST -d '{"tag_name": "'$git_tag'", "name": "'$git_tag'"}' https://api.github.com/repos/WebDevGeek9922/travis-test/releases

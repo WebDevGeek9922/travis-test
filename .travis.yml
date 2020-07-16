@@ -4,8 +4,8 @@ node_js:
   - "12"
 
 script:
-  - if [ "$TRAVIS_BRANCH" = "staging" ]; then bash ./travis-push.sh; fi
-  - if [ "$TRAVIS_BRANCH" = "master" ]; then bash ./travis-push.sh; fi
+  - if [ "$TRAVIS_BRANCH" = "staging" ]; then bash ./version-bump.sh; fi
+  - if [ "$TRAVIS_BRANCH" = "master" ]; then bash ./version-bump.sh; fi
 
 notifications:
   email: false

@@ -6,7 +6,7 @@ node_js:
 script:
   - git checkout "$TRAVIS_BRANCH"
   - echo "$GITHUB_TOKEN"
-  - if [ "$TRAVIS_BRANCH" = "master" ]; then yarn release --minor --ci; fi
+  - if [ "$TRAVIS_BRANCH" = "master" ]; then bash travis-push.sh; fi
   - if [ "$TRAVIS_BRANCH" = "stage" ]; then yarn release --patch --ci; fi
 
 notifications:
